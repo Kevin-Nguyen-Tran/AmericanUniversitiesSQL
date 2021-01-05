@@ -13,7 +13,8 @@ ORDER BY graduation_rate_four_year_bachelors;
 
 // How diverse is each university in regards to ethnic background?
 
-SELECT percent_american_indian, percent_asian, percent_african_american, percent_hispanic_latino, percent_native_hawaiian, percent_white, percent_two_plus_races, percent_unknown, percent_nonresident_alien, geographic_region, american_universities.name FROM percent_of_total_enrollment_race
+SELECT percent_american_indian, percent_asian, percent_african_american, percent_hispanic_latino, percent_native_hawaiian, percent_white, percent_two_plus_races, 
+percent_unknown, percent_nonresident_alien, geographic_region, american_universities.name FROM percent_of_total_enrollment_race
 JOIN enrollment ON enrollment.percent_of_total_enroll_race_id = percent_of_total_enrollment_race.id
 JOIN american_universities ON american_universities.id = enrollment.au_id
 JOIN geographical_location ON geographical_location.au_id = american_universities.id;
